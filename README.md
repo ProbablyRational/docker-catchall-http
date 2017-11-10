@@ -1,8 +1,8 @@
 # Docker catchall http server
 > This is a small docker container to server a single index.php to all inbound requests.
 
-[![Twitter](https://img.shields.io/twitter/url/https/store.docker.com/community/images/probablyrational/catchall-http.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fstore.docker.com%2Fcommunity%2Fimages%2Fprobablyrational%2Fcatchall-http)
-[![Docker Stars](https://img.shields.io/docker/stars/probablyrational/catchall-http.svg)](https://store.docker.com/community/images/probablyrational/catchall-http)
+[![Twitter](https://img.shields.io/twitter/url/https/store.docker.com/community/images/probablyrational/catchall-http.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https://github.com/ProbablyRational/docker-catchall-http)
+[![Github Stars](https://img.shields.io/github/stars/probablyrational/catchall-http.svg)](https://github.com/ProbablyRational/docker-catchall-http)
 [![Docker Pulls](https://img.shields.io/docker/pulls/probablyrational/catchall-http.svg)](https://store.docker.com/community/images/probablyrational/catchall-http)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
