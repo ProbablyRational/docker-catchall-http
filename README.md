@@ -18,15 +18,6 @@ The following enviromental varibles can be used to change the default splash pag
 - PAGE_HOMELINK = "https://probablyrational.com/about"
 - PAGE_HOMETEXT = "About us"
 
-## Development setup
-
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sh
-make install
-npm test
-```
-
 ## Meta
 
 Probably Rational Ltd. – [@probablypi](https://twitter.com/probablypi) – contact@probablyrational.com
