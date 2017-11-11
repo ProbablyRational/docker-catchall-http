@@ -6,22 +6,36 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/probablyrational/catchall-http.svg)](https://store.docker.com/community/images/probablyrational/catchall-http)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-## Installation
-
-Docker:
+## Useage
 
 ```sh
-docker run -d -p 80:80 probablyrational/catchall-http
+
+docker create \ 
+  --name=docker-catchall \
+  -v <path to data>:/var/www/html \
+  -e PAGE_TITLE= "Service unavailable" \
+  -e PAGE_BODY= "#domain# is currently unavailable" \
+  -p 80:80 
+  probablyrational/catchall-http
+
 ```
 
-## Usage example
+## Parameters
 
-The following enviromental varibles can be used to change the default splash page, or you can mount /var/www/html/index.php
+### Enviromental varibles
 
 - PAGE_TITLE = "Service unavailable"
 - PAGE_BODY = "#domain# is currently unavailable"
 - PAGE_HOMELINK = "https://probablyrational.com/about"
 - PAGE_HOMETEXT = "About us"
+
+### Files and folders
+
+- <path to data>:/config
+  
+### Ports
+
+- 80
 
 ## Meta
 
