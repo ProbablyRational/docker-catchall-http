@@ -31,7 +31,7 @@ docker create \
 
 ### Files and folders
 
-- <path to data>:/config
+- <path to data>:/var/www/html
   
 ### Ports
 
