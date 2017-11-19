@@ -18,6 +18,13 @@ RUN apt update
 # Install essentials
 RUN apt install -y curl wget htop git nano cron
 
+# Install Composer
+RUN mkdir -p ~/.composer/vendor/bin
+RUN curl -o installer.php https://getcomposer.org/installer && php installer.php --install-dir ~/.composer/vendor/bin && rm installer.php
+
+# Clean up
+RUN rm -rf /var/www/*
+
 # Configure apache
 RUN curl -o /etc/apache2/sites-available/000-default.conf https://gist.githubusercontent.com/hcaz/14ff9ec7efcfe09cd301ff60532dd883/raw/000-default.conf
 RUN a2enmod status rewrite
