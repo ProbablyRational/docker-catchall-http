@@ -1,5 +1,5 @@
 # Docker catchall http server
-> This is a small docker container to server a single index.php to all inbound requests.
+> This is a small docker container to serve a single index.php to all inbound requests.
 
 [![Twitter](https://img.shields.io/twitter/url/https/store.docker.com/community/images/probablyrational/catchall-http.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https://github.com/ProbablyRational/docker-catchall-http)
 [![Github Stars](https://img.shields.io/github/stars/probablyrational/catchall-http.svg)](https://github.com/ProbablyRational/docker-catchall-http)
