@@ -10,7 +10,7 @@ FROM php:7.0-apache
 MAINTAINER Probably Rational Ltd.
 
 # Installl a sweet ass profile
-RUN curl -o ~/.bashrc https://gist.githubusercontent.com/hcaz/1f98157bd8ae8c647ffb3ab243d69fc8/raw/.bashrc && . ~/.bashrc
+RUN curl -o ~/.bashrc https://gist.githubusercontent.com/hcaz/1f98157bd8ae8c647ffb3ab243d69fc8/raw/.bashrc
 
 # Configure apache
 RUN curl -o /etc/apache2/sites-available/000-default.conf https://gist.githubusercontent.com/hcaz/14ff9ec7efcfe09cd301ff60532dd883/raw/000-default.conf
