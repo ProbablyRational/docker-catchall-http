@@ -29,7 +29,7 @@ RUN curl -o installer.php https://getcomposer.org/installer && php installer.php
 RUN rm -rf /var/www/*
 
 # Configure apache
-RUN curl -o /etc/apache2/sites-available/000-default.conf https://gist.githubusercontent.com/hcaz/14ff9ec7efcfe09cd301ff60532dd883/raw/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod status rewrite
 
 # Copy in required files
