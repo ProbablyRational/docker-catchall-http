@@ -12,7 +12,7 @@ set httpd port 2812 and
 
 check system $HOST
 
-check directory www with path /var/www/public
+check directory www with path /var/www
 
 check filesystem rootfs with path /
 
@@ -23,8 +23,8 @@ check host google with address google.com
 check host enhost with address enhost.io
 	if failed port 443 protocol https then alert
 
-check network net with interface eth0
+check network public with interface eth0
 
 check process apache2 with pidfile /var/run/apache2/apache2.pid
 
-include /var/www/public/monitConf
+include /var/www/monitConf
