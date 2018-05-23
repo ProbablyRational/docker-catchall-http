@@ -1,10 +1,10 @@
 ############################################################
 # Dockerfile to build Catchall HTTP container images
-# Based on php:7.0
+# Based on php:7.2
 ############################################################
 
 # Set the base image to php:7.0
-FROM php:7.0-apache
+FROM php:7.2-apache
 
 # File Author / Maintainer
 MAINTAINER Probably Rational Ltd.
@@ -16,10 +16,11 @@ WORKDIR /var/www/html
 RUN curl -o ~/.bashrc https://gist.githubusercontent.com/hcaz/1f98157bd8ae8c647ffb3ab243d69fc8/raw/.bashrc
 
 # Update the repository sources list
-RUN apt update
+RUN apt update --fix-missing
 
 # Install essentials
-RUN apt install -y curl wget htop git nano cron
+RUN apt install -y git curl wget zip unzip htop nano ncdu screen sshfs sl cowsay python-minimal
+RUN apt install -y cron monit
 
 # Install Composer
 RUN mkdir -p ~/.composer/vendor/bin
@@ -41,5 +42,12 @@ RUN touch crontab.tmp && echo '*/5 * * * * curl -fsS --retry 3 https://hchk.io/$
 # Make composer work globally ;)
 RUN mv ~/.composer/vendor/bin/composer.phar ~/.composer/vendor/bin/composer
 
+# Setup Monit
+COPY monitrc /etc/monit/monitrc
+RUN chmod 600 /etc/monit/monitrc
+
 # Expose ports
 EXPOSE 80
+EXPOSE 2812
+
+ENTRYPOINT monit && service apache2 start && /bin/bash
