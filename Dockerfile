@@ -19,7 +19,7 @@ RUN curl -o ~/.bashrc https://gist.githubusercontent.com/hcaz/1f98157bd8ae8c647f
 RUN apt update --fix-missing
 
 # Install essentials
-RUN apt install -y git curl wget zip unzip htop nano ncdu screen sshfs sl cowsay python-minimal
+RUN apt install -y git curl wget zip unzip htop nano ncdu screen sshfs sl cowsay python-minimal openssh-server
 RUN apt install -y cron monit
 
 # Install Composer
@@ -50,4 +50,4 @@ RUN chmod 600 /etc/monit/monitrc
 EXPOSE 80
 EXPOSE 2812
 
-ENTRYPOINT monit && service apache2 start && /bin/bash
+ENTRYPOINT service ssh start && service apache2 start && monit&& /bin/bash
