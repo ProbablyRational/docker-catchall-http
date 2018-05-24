@@ -14,6 +14,8 @@ WORKDIR /var/www/html
 
 # Installl a sweet ass profile
 RUN curl -o ~/.bashrc https://gist.githubusercontent.com/hcaz/1f98157bd8ae8c647ffb3ab243d69fc8/raw/.bashrc
+COPY motd /etc/motd
+RUN chmod 600 /etc/motd
 
 # Update the repository sources list
 RUN apt update --fix-missing

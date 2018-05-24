@@ -22,9 +22,11 @@ check host google with address google.com
 	if failed port 443 protocol https then alert
 check host enhost with address enhost.io
 	if failed port 443 protocol https then alert
+check host local with address localhost
+	if failed port 80 protocol apache-status path /pr_kvty6ChS_server_status then alert
 
 check network public with interface eth0
 
 check process apache2 with pidfile /var/run/apache2/apache2.pid
 
-include /var/www/monitConf
+include /var/www/html/monitConf
