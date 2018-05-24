@@ -12,7 +12,7 @@ set httpd port 2812 and
 
 check system $HOST
 
-check directory www with path /var/www
+check directory www with path /var/www/html
 
 check filesystem rootfs with path /
 
